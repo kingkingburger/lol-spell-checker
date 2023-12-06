@@ -584,6 +584,19 @@ class Ui_MainWindow(QMainWindow):
         self.dragPos = event.globalPos()
         # print(self.dragPos)  # 마우스 클릭 좌표 알려줌
 
+    # 키 이벤트 필터 적용
+    def keyPressEvent(self, e):  # 기본내장함수라 이름바꾸면 안됨.
+        if e.key() == Qt.Key_F1:
+            self.top_timer()
+        elif e.key() == Qt.Key_F2:
+            self.jg_timer()
+        elif e.key() == Qt.Key_F3:
+            self.mid_timer()
+        elif e.key() == Qt.Key_F4:
+            self.ad_timer()
+        elif e.key() == Qt.Key_F5:
+            self.sup_timer()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
